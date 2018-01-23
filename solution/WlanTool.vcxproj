@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Exceptions.h" />
+    <ClInclude Include="..\src\LoggerInterface.h" />
+    <ClInclude Include="..\src\SimpleLogger.h" />
+    <ClInclude Include="..\src\WifiCrackerInterface.h" />
+    <ClInclude Include="..\src\WifiCrackerWindows.h" />
+    <ClInclude Include="..\src\WlanInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Main.cpp" />
+    <ClCompile Include="..\src\SimpleLogger.cpp" />
+    <ClCompile Include="..\src\WifiCrackerWindows.cpp" />
+    <ClCompile Include="..\src\WlanInterface.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9CD3D42F-BFC9-4FE0-A333-DFE9537035DF}</ProjectGuid>
@@ -138,20 +152,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="LoggerInterface.h" />
-    <ClInclude Include="SimpleLogger.h" />
-    <ClInclude Include="WifiCrackerInterface.h" />
-    <ClInclude Include="WifiCrackerWindows.h" />
-    <ClInclude Include="WlanInterface.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SimpleLogger.cpp" />
-    <ClCompile Include="WifiCrackerWindows.cpp" />
-    <ClCompile Include="WlanInterface.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
