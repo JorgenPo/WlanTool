@@ -43,13 +43,26 @@ std::list<WlanInterface> WifiToolWindows::EnumerateWLANInterfaces() const
 
 	this->logger->Debug("WlanEnumInterfaces found %lu interfaces", pInfoList->dwNumberOfItems);
 
-	for (int i = 0; i < pInfoList->dwNumberOfItems; ++i) {
+	for (uint32_t i = 0; i < pInfoList->dwNumberOfItems; ++i) {
 		result.push_back(WlanInterface(pInfoList->InterfaceInfo[i]));
 	}
 
 	return result;
 }
 
-void WifiToolWindows::GetInterfaceCapability() const
+WlanInterfaceCapability WifiToolWindows::GetInterfaceCapability(const WlanInterface &device) const
 {
+	DWORD result = 0;
+	PWLAN_INTERFACE_CAPABILITY capability;
+
+	result = WlanGetInterfaceCapability(this->clientHandle, &device.GetGUID(), nullptr, &capability);
+	if (result != ERROR_SUCCESS) {
+		this->logger->Error("WlanGetInterfaceCapability failed with error %u", result);
+		throw WlanException(result);
+	}
+
+	this->logger->Info("Interface support %S phy types!", 
+		device.GetGUIDString().c_str(), capability->dwNumberOfSupportedPhys);
+
+	return WlanInterfaceCapability(capability);
 }

@@ -33,11 +33,14 @@ void SimpleLogger::log(LogLevel level, string message, va_list args) const
 
 	cout << '[' << this->logLevelMap.at(level) << "] ";
 
-	char* buffer = new char[message.length()];
-	vsprintf_s(buffer, message.length(), message.c_str(), args);
+	size_t length = message.length() > 400 ? message.length() : 400;
+
+	// TODO: count strings in args too
+	char* buffer = new char[length];
+	vsprintf_s(buffer, length, message.c_str(), args);
 	message = buffer;
 
-	cout << message << endl;
+	cout << message << '\n';
 
 	delete buffer;
 }

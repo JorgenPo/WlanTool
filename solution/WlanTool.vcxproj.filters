@@ -27,7 +27,7 @@
     <ClInclude Include="..\src\WifiToolWindows.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="WlanInterfaceCapability.h">
+    <ClInclude Include="..\src\WlanInterfaceCapability.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +44,7 @@
     <ClCompile Include="..\src\WifiToolWindows.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="WlanInterfaceCapability.cpp">
+    <ClCompile Include="..\src\WlanInterfaceCapability.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

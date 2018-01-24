@@ -1,7 +1,5 @@
 #pragma once
 
-#include "WifiToolInterface.h"
-
 #ifndef UNICODE
 #define UNICODE
 #endif
@@ -10,8 +8,10 @@
 #include <wlanapi.h>
 #include <memory>
 
+#include "WifiToolInterface.h"
 #include "LoggerInterface.h"
 #include "WlanInterface.h"
+#include "WlanInterfaceCapability.h"
 
 #pragma comment(lib, "wlanapi.lib")
 #pragma comment(lib, "ole32.lib")
@@ -27,7 +27,7 @@ public:
 
 	// Унаследовано через WifiCrackerInterface
 	virtual std::list<WlanInterface> EnumerateWLANInterfaces() const override;
-	virtual void GetInterfaceCapability() const override;
+	virtual WlanInterfaceCapability GetInterfaceCapability(const WlanInterface &device) const override;
 
 private:
 	HANDLE clientHandle;

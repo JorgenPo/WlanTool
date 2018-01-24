@@ -25,14 +25,14 @@
     <ClInclude Include="..\src\WifiToolInterface.h" />
     <ClInclude Include="..\src\WifiToolWindows.h" />
     <ClInclude Include="..\src\WlanInterface.h" />
-    <ClInclude Include="WlanInterfaceCapability.h" />
+    <ClInclude Include="..\src\WlanInterfaceCapability.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Main.cpp" />
     <ClCompile Include="..\src\SimpleLogger.cpp" />
     <ClCompile Include="..\src\WifiToolWindows.cpp" />
     <ClCompile Include="..\src\WlanInterface.cpp" />
-    <ClCompile Include="WlanInterfaceCapability.cpp" />
+    <ClCompile Include="..\src\WlanInterfaceCapability.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
