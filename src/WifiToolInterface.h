@@ -5,9 +5,10 @@
 
 #include "WlanInterface.h"
 
-class WifiCrackerInterface
+class WifiToolInterface
 {
 public:
 	virtual std::list<WlanInterface> EnumerateWLANInterfaces() const = 0;
+	virtual void GetInterfaceCapability() const = 0;
 };
 

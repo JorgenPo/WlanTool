@@ -22,15 +22,17 @@
     <ClInclude Include="..\src\Exceptions.h" />
     <ClInclude Include="..\src\LoggerInterface.h" />
     <ClInclude Include="..\src\SimpleLogger.h" />
-    <ClInclude Include="..\src\WifiCrackerInterface.h" />
-    <ClInclude Include="..\src\WifiCrackerWindows.h" />
+    <ClInclude Include="..\src\WifiToolInterface.h" />
+    <ClInclude Include="..\src\WifiToolWindows.h" />
     <ClInclude Include="..\src\WlanInterface.h" />
+    <ClInclude Include="WlanInterfaceCapability.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Main.cpp" />
     <ClCompile Include="..\src\SimpleLogger.cpp" />
-    <ClCompile Include="..\src\WifiCrackerWindows.cpp" />
+    <ClCompile Include="..\src\WifiToolWindows.cpp" />
     <ClCompile Include="..\src\WlanInterface.cpp" />
+    <ClCompile Include="WlanInterfaceCapability.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -129,6 +131,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +148,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

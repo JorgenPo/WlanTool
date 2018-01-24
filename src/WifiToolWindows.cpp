@@ -1,9 +1,9 @@
-#include "WifiCrackerWindows.h"
+#include "WifiToolWindows.h"
 
 #include "SimpleLogger.h"
 #include "Exceptions.h"
 
-WifiCrackerWindows::WifiCrackerWindows()
+WifiToolWindows::WifiToolWindows()
 {
 	logger = std::make_unique<SimpleLogger>();
 	logger->SetLogLevel(LogLevel::INFO);
@@ -21,12 +21,12 @@ WifiCrackerWindows::WifiCrackerWindows()
 }
 
 
-WifiCrackerWindows::~WifiCrackerWindows()
+WifiToolWindows::~WifiToolWindows()
 {
 	WlanCloseHandle(this->clientHandle, nullptr);
 }
 
-std::list<WlanInterface> WifiCrackerWindows::EnumerateWLANInterfaces() const
+std::list<WlanInterface> WifiToolWindows::EnumerateWLANInterfaces() const
 {
 	std::list<WlanInterface> result;
 
@@ -48,4 +48,8 @@ std::list<WlanInterface> WifiCrackerWindows::EnumerateWLANInterfaces() const
 	}
 
 	return result;
+}
+
+void WifiToolWindows::GetInterfaceCapability() const
+{
 }

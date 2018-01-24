@@ -18,13 +18,16 @@
     <ClInclude Include="..\src\SimpleLogger.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\WifiCrackerInterface.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\WifiCrackerWindows.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\WlanInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WifiToolInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WifiToolWindows.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WlanInterfaceCapability.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +38,13 @@
     <ClCompile Include="..\src\SimpleLogger.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\WifiCrackerWindows.cpp">
+    <ClCompile Include="..\src\WlanInterface.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\WlanInterface.cpp">
+    <ClCompile Include="..\src\WifiToolWindows.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="WlanInterfaceCapability.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

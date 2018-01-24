@@ -1,6 +1,6 @@
 #pragma once
 
-#include "WifiCrackerInterface.h"
+#include "WifiToolInterface.h"
 
 #ifndef UNICODE
 #define UNICODE
@@ -16,20 +16,22 @@
 #pragma comment(lib, "wlanapi.lib")
 #pragma comment(lib, "ole32.lib")
 
-class WifiCrackerWindows :
-	public WifiCrackerInterface
+class WifiToolWindows :
+	public WifiToolInterface
 {
 	static constexpr DWORD MaxClientVersion = 2;
 
 public:
-	WifiCrackerWindows();
-	~WifiCrackerWindows();
+	WifiToolWindows();
+	~WifiToolWindows();
 
 	// Унаследовано через WifiCrackerInterface
 	virtual std::list<WlanInterface> EnumerateWLANInterfaces() const override;
+	virtual void GetInterfaceCapability() const override;
 
 private:
 	HANDLE clientHandle;
 	std::unique_ptr<LoggerInterface> logger;
+	
 };
 

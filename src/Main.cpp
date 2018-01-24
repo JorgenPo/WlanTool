@@ -1,4 +1,4 @@
-#include "WifiCrackerWindows.h"
+#include "WifiToolWindows.h"
 
 #include <memory>
 #include <list>
@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	auto wifiCracker = make_unique<WifiCrackerWindows>();
+	auto wifiCracker = make_unique<WifiToolWindows>();
 
 	list<WlanInterface> interfaces = wifiCracker->EnumerateWLANInterfaces();
 
