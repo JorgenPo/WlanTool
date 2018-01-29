@@ -33,7 +33,7 @@ void SimpleLogger::log(LogLevel level, string message, va_list args) const
 
 	cout << '[' << this->logLevelMap.at(level) << "] ";
 
-	size_t length = message.length() > 400 ? message.length() : 400;
+	size_t length = 5000;
 
 	// TODO: count strings in args too
 	char* buffer = new char[length];

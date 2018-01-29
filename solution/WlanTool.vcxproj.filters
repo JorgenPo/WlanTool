@@ -7,6 +7,9 @@
     <Filter Include="Headers">
       <UniqueIdentifier>{1c30c94e-9208-43c6-a35e-31afd025470e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{c79abbfc-6ba6-4c46-a2c2-1f5cf9b82eae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Exceptions.h">
@@ -30,6 +33,15 @@
     <ClInclude Include="..\src\WlanInterfaceCapability.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\WlanNetwork.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WifiCracker.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\CLI11.hpp">
+      <Filter>Libraries</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Main.cpp">
@@ -45,6 +57,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\src\WlanInterfaceCapability.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WlanNetwork.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WifiCracker.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

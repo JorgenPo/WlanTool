@@ -27,6 +27,7 @@ public:
 
 	// Унаследовано через WifiCrackerInterface
 	virtual std::list<WlanInterface> EnumerateWLANInterfaces() const override;
+	virtual std::list<WlanNetwork> GetAvailableNetworksList() const override;
 	virtual WlanInterfaceCapability GetInterfaceCapability(const WlanInterface &device) const override;
 
 private:

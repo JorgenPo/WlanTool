@@ -20,19 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Exceptions.h" />
+    <ClInclude Include="..\src\lib\CLI11.hpp" />
     <ClInclude Include="..\src\LoggerInterface.h" />
     <ClInclude Include="..\src\SimpleLogger.h" />
+    <ClInclude Include="..\src\WifiCracker.h" />
     <ClInclude Include="..\src\WifiToolInterface.h" />
     <ClInclude Include="..\src\WifiToolWindows.h" />
     <ClInclude Include="..\src\WlanInterface.h" />
     <ClInclude Include="..\src\WlanInterfaceCapability.h" />
+    <ClInclude Include="..\src\WlanNetwork.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Main.cpp" />
     <ClCompile Include="..\src\SimpleLogger.cpp" />
+    <ClCompile Include="..\src\WifiCracker.cpp" />
     <ClCompile Include="..\src\WifiToolWindows.cpp" />
     <ClCompile Include="..\src\WlanInterface.cpp" />
     <ClCompile Include="..\src\WlanInterfaceCapability.cpp" />
+    <ClCompile Include="..\src\WlanNetwork.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

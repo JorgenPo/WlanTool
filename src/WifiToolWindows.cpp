@@ -6,7 +6,7 @@
 WifiToolWindows::WifiToolWindows()
 {
 	logger = std::make_unique<SimpleLogger>();
-	logger->SetLogLevel(LogLevel::INFO);
+	logger->SetLogLevel(LogLevel::ERRORS);
 
 	DWORD dwResult = 0;
 	DWORD dwVersionUsed = 0;
@@ -47,6 +47,8 @@ std::list<WlanInterface> WifiToolWindows::EnumerateWLANInterfaces() const
 		result.push_back(WlanInterface(pInfoList->InterfaceInfo[i]));
 	}
 
+	WlanFreeMemory(pInfoList);
+
 	return result;
 }
 
@@ -65,4 +67,35 @@ WlanInterfaceCapability WifiToolWindows::GetInterfaceCapability(const WlanInterf
 		device.GetGUIDString().c_str(), capability->dwNumberOfSupportedPhys);
 
 	return WlanInterfaceCapability(capability);
+}
+
+std::list<WlanNetwork> WifiToolWindows::GetAvailableNetworksList() const
+{
+	std::list<WlanNetwork> resultList;
+
+	auto list = this->EnumerateWLANInterfaces();
+
+	// First interface
+	WlanInterface& defaultInterface = list.front();
+
+	this->logger->Info("GetAvailableNetworkList Using default interface %S", 
+		defaultInterface.GetGUIDString());
+
+	PWLAN_AVAILABLE_NETWORK_LIST networkList;
+
+	DWORD result = WlanGetAvailableNetworkList(clientHandle, 
+		&defaultInterface.GetGUID(), 0, nullptr, &networkList);
+
+	if (result != ERROR_SUCCESS) {
+		this->logger->Error("WlanGetInterfaceCapability failed with error %u", result);
+		throw WlanException(result);
+	}
+
+	for (size_t i = 0; i < networkList->dwNumberOfItems; ++i) {
+		resultList.push_back(WlanNetwork(networkList->Network[i]));
+	}
+
+	WlanFreeMemory(networkList);
+
+	return resultList;
 }
