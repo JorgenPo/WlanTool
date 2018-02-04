@@ -1,2 +1,5 @@
 #define WLANTOOL_VERSION_MAJOR 0
 #define WLANTOOL_VERSION_MINOR 1
+
+#define WIN32
+/* #undef UNIX */

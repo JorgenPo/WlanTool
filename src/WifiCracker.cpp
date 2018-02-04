@@ -6,11 +6,12 @@
 WifiCracker::WifiCracker()
 	: subcommand("undefined")
 {
-//#ifdef WINDOWS
+#ifdef WIN32
 	this->wlanTool = std::make_unique<WifiToolWindows>();
-//#else
-	//wlanTool = std::make_unique<WifiToolLinux>();
-//#endif
+#elif UNIX
+	this->wlanTool = std::make_unique<WifiToolLinux>();
+#endif
+
 	this->cli = std::make_unique<CLI::App>("Wifi cracking crossplatform tool");
 
 	this->listNetworksCli = this->cli->add_subcommand("listNetworks", "List available wifi networks");
